@@ -1,0 +1,142 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #30336b;
+  padding: 30px;
+  font-family: 'Trebuchet MS';
+}
+
+.navigation-block {
+  width: 200px;
+}
+
+.hamberger-menu {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  transition: all 0.3s ease-out;
+}
+
+.bar.upper-bar {
+  transform: translatey(-10px);
+}
+
+.bar.lower-bar {
+  transform: translatey(10px);
+}
+
+.hamberger-menu,
+.menu-list {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-list {
+  display: none;
+}
+
+.menu-list > ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.menu-list > ul > li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  border-bottom: solid 1px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.menu-list > ul > li a:hover {
+  background-color: rgba(0,0,0,0.2);
+  animation: linkAnimation 0.2s ease-out;
+}
+
+.menu-background {
+  width: 600px;
+  height: 600px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #eb4d4b;
+  transform: translate(-100%, -100%);
+  transition: all 0.3s ease-out;
+  border-radius: 100%;
+}
+
+.navigation-block:hover .bar.upper-bar,
+.navigation-block:hover .bar.lower-bar {
+  transform: translatey(0px);
+}
+
+.navigation-block:hover .bar.upper-bar {
+  transform: rotate(45deg);
+}
+
+.navigation-block:hover .bar.lower-bar {
+  transform: rotate(-45deg);
+}
+
+.navigation-block:hover .bar.middle-bar {
+  transform: translatex(-1000px);
+}
+
+.navigation-block:hover .menu-list {
+  display: block;
+}
+
+.navigation-block:hover .menu-background {
+  animation: bubblePresent 0.3s ease-out;
+  transform: translate(-50%, -30%);
+}
+
+@keyframes linkAnimation {
+  0% {
+    /*transform: translateX(50px);*/
+    transform: scale(1.1);
+  }
+  80% {
+    /*transform: translateX(-10px);*/
+    transform: scale(0.9);
+  }
+  100% {
+    /*transform: translateX(0px);*/
+    transform: scale(1);
+  }
+}
+
+@keyframes bubblePresent {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  80% {
+    transform: translate(-45%, -25%);
+  }
+  100% {
+    transform: translate(-50%, -30%);
+  }
+}
+
+.author {
+  font-size: 20px;
+  color: #ffffff;
+  float: right;
+}

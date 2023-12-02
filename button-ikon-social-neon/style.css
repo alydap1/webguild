@@ -1,0 +1,70 @@
+/* author: David J Sealey */
+:root {
+    --primary: #25abd9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    background-color: #333;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 350px;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.button {
+    background-color: #111;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px -5px #111;
+    cursor: pointer;
+    font-family: roboto;
+    height: 75px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    transition: text-shadow 0.5s ease;
+    width: 75px;
+}
+
+.button__icon {
+    color: #777;
+    transition: color 0.5s ease-out;
+}
+
+/* Hover styles */
+
+.button:hover {
+    animation: glow 1s infinite alternate;
+    text-shadow: 0 0 15px var(--primary);
+}
+
+.button:hover .button__icon {
+    color: var(--primary);
+}
+
+/* Animation */
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px var(--primary);
+    }
+
+    100% {
+        box-shadow: 0 0 25px var(--primary);
+    }
+}
